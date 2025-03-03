@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Register User</h2>
+        <form id="registerForm">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required minlength="3" maxlength="20">
+
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required minlength="6" maxlength="20">
+                <input type="checkbox" id="togglePassword"> Tampilkan Password
+            </div>
+
+            <label for="whatsapp">No. WhatsApp:</label>
+            <input type="text" id="whatsapp" name="whatsapp" required minlength="11" maxlength="14">
+
+            <label for="image">Foto Profil (JPG, 50KB - 500KB):</label>
+            <input type="file" id="image" name="image" accept="image/jpeg" required>
+            <div class="image-container">
+                <img id="imagePreview" class="hidden" alt="Preview Gambar">
+                <canvas id="faceCanvas" class="hidden"></canvas>
+            </div>
+            <div id="faceValidation" class="error"></div>
+
+            <button type="submit" id="registerBtn" disabled>Register</button>
+        </form>
+    </div>
+</body>
+</html>
